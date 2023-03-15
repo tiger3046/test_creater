@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thyme.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div>商品の更新</div>
+	<form method="post" th:action="@{/lesson03_02/update/complete}">
+		id:<input type="number" name="id" th:value="${food.id}">
+		name:<input type="text" name="name" th:value="${food.name}">
+		stock:<input type="number" name="stock" th:value="${food.stock}">
+		<input type="submit" value="更新する" />
+	</form>
+</body>
+</html>

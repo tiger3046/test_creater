@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<style>
+
+	table {
+  		border-collapse: collapse;
+  		width: 100%;
+		max-width: 800px;
+		background-color: purple;
+		color: white;
+	}
+		
+	th,td {
+		text-align: left;
+		padding: 8px;
+		border: 1px solid white;
+	}
+		
+	th {
+		  background-color: white;
+		  color: purple;
+	}
+</style>
+</head>
+<body>
+	<form th:action="@{/lesson03_01/serch/word/include}" method="get">
+		商品名検索:<input type="text" name="word" />
+		<input type="submit" value="検索する" />
+	</form>
+	<a th:href="@{/lesson03_02/create/input}">新規登録</a>
+	<table>
+		<tr> 
+			<th>ID</th> 
+			<th>商品名</th> 
+			<th>在庫数</th> 
+			<th>入荷日</th>
+			<th>更新</th>
+			<th>削除</th>
+      	</tr>
+      <tr th:each="food: ${foods}">
+        <td th:text="${food.id}"></td>
+        <td th:text="${food.name}"></td>
+        <td th:text="${food.stock}"></td>
+        <td th:text="${food.arrivalDate }"></td>
+        <td>
+   			 <a th:href="@{/lesson03_02/create/update/{id}(id=${food.id})}">
+        	<button type="button">更新</button>
+    		</a>
+		</td>
+        <td>
+   			 <a th:href="@{/lesson03_02/delete/{id}(id=${food.id})}">
+        	<button type="button">削除</button>
+    		</a>
+		</td>      
+	  </tr>
+    </table>
+</body>
+</html>

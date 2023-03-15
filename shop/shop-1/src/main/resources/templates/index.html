@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div>トップページ</div>
+	<div th:text="${session.userId}"></div>
+	<a href="/shop-1/loginOnSession">ログイン</a>
+	<a href="/shop-1/logout">ログアウト</a>
+	<a href="/shop-1/items/findAll ">全件検索</a>
+	<a href="/shop-1/item/findAllByOrderByPriceDesc">並び替え検索</a>
+	<a href="/shop-1/items/getById/1 ">主キー検索(1)</a>
+	<a href="/shop-1/items/getById/4 ">主キー検索(4)</a>
+	<a href="/shop-1/items/findByPrice/100 ">価格検索(100)</a>
+	<a href="/shop-1/items/findByNameAndPrice/りんご/200 ">名前と価格による検索(りんご かつ 200)</a>
+	<a href="/shop-1/items/findByNameLike/ん ">曖昧検索</a>
+	<br>
+	<a href="/shop-1/items/create/input ">登録</a>
+	<a href="/shop-1/items/update/input/1 ">修正(1)</a>
+	<a href="/shop-1/items/delete/input">削除</a>
+	<br>
+	<a href="/shop-1/items/findItemAndCategory ">外部参照検索</a>
+	<a href="/shop-1/items/serchByCategoryId/1 ">id1番の商品を検索</a>
+	<br>
+	<a href="/shop-1/items/searchWithNamedQuery/1 ">NamedQuery による検索</a>
+	<a href="/shop-1/items/searchWithQuery ">Query による検索</a>
+
+	
+</body>
+</html>
